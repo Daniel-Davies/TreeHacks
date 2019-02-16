@@ -19,9 +19,8 @@ def index(request):
 
 @csrf_exempt
 def sendMail(request):
-    print("hell")
     send_mail('Subject here','Here is the message.','callmedanemailacc@gmail.com',['daviesdg@uci.edu'],fail_silently=False)
-    return JsonResponse({'foo':'bar'})
+    return render(request, 'DocOc/breakdown.html', {'confirmed': 1})
 
 @csrf_exempt
 def entry(request):
@@ -33,7 +32,7 @@ def verdict(request):
 
 @csrf_exempt
 def breakdown(request):
-    return render(request, 'DocOc/breakdown.html')
+    return render(request, 'DocOc/breakdown.html', {'confirmed': 0})
 
 @csrf_exempt
 def upload(request):
