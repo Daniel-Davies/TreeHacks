@@ -3,9 +3,23 @@
 
 {% block pagecontent %}
 {% include "DocOC/header.html" %}
+<div class="container">
 <form method="post" enctype="multipart/form-data" action="/upload">
-    <input type="file" name="myfile">
-    <button type="submit">Upload</button>
+    <div class="form-group-vertical">
+
+    <label for="fileup">Upload Data File : </label>
+    <input  id="fileup" type="file" name="myfile">
+</div>
+    <button class="btn btn-primary" type="submit">Upload</button>
 </form>
+</div>
+<div class="container">
+
+<p>
+    Charts and stuff go here
+
+</p>
+
+</div>
 {% include "DocOC/footer.html" %}
 {% endblock %}
