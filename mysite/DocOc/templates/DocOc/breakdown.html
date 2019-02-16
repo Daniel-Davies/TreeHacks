@@ -1,10 +1,11 @@
 {% extends 'DocOc/base.html' %}
 
 {% block pagecontent %}
+{% include "DocOC/header.html" %}
 <h1>Breakdown</h1>
     <a href="/sendMail">Send Email</a>
     {% if confirmed == 1 %}
         <script>alert("Hi")</script>
     {% endif %}
-
+    {% include "DocOC/footer.html" %}
 {% endblock %}

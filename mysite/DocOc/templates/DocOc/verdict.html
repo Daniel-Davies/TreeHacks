@@ -1,6 +1,7 @@
 {% extends 'DocOc/base.html' %}
 
 {% block pagecontent %}
+{% include "DocOC/header.html" %}
 {% if verdict == '1' %}
     <b>Viral, no antibiotics required</b>
   {% else %}
@@ -8,5 +9,6 @@
 
   {% endif %}
     <a href="/breakdown">Explanation</a>
+    {% include "DocOC/footer.html" %}
 {% endblock %}
 
