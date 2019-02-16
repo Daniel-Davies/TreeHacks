@@ -78,3 +78,18 @@ def upload(request):
         result = clf.predict(data)
 
     return render(request, 'DocOc/verdict.html',{'result': result})
+
+
+@csrf_exempt
+def forums(request):
+    return render(request,"DocOc/forums.html")
+
+
+@csrf_exempt
+def about(request):
+    return render(request,"DocOc/about.html")
+
+
+@csrf_exempt
+def tracking(request):
+    return render(request,"DocOc/tracking.html")

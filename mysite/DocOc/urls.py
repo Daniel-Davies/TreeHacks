@@ -10,6 +10,8 @@ urlpatterns = [
     path('breakdown', views.breakdown, name='breakdown'),
     path('sendMail', views.sendMail, name='sendMail'),
     path('dashboard', views.dashboard, name='dashboard'),
-
+    path('forums', views.forums, name='forums'),
+    path('about', views.about, name='about'),
+    path('tracking', views.about, name='tracking'),
 
 ]
