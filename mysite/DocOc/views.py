@@ -10,6 +10,9 @@ from django.http import HttpResponse
 from joblib import load
 from sklearn import svm
 import pickle
+import numpy as np
+
+
 # Create your views here.
 @csrf_exempt
 def index(request):
@@ -34,6 +37,7 @@ def breakdown(request):
 
 @csrf_exempt
 def upload(request):
+    result = -1
     # if this is a POST request we need to process the form data
     if request.method == 'POST' and request.FILES['myfile']:
         myfile = request.FILES['myfile']
@@ -43,11 +47,30 @@ def upload(request):
         # create a form instance and populate it with data from the request:
         
         # Data preprocessing
-        
+        demo_path = uploaded_file_url
+        mean_path = "DocOc/static/train_mean.csv"
+        std_path = "DocOc/static/train_std.csv"
+        genes_path = "DocOc/static/gene_order.csv"
+
+        #demo should have first row be gene name and second row be value 
+        demo = np.loadtxt(demo_path, delimiter ="\t", dtype = str) #(2, 13321)
+        mean = np.loadtxt(mean_path, delimiter ="\t", dtype = float) #(100,)
+        std = np.loadtxt(std_path, delimiter ="\t", dtype = float) #(100,)
+        genes = np.loadtxt(genes_path, delimiter ="\t", dtype = str) #(100,)
+
+        demo_dict = {}
+        for gene, value in demo.T:
+            demo_dict[gene.upper()] = float(value)
+
+        data = np.array([demo_dict[gene] if gene in demo_dict else mean[index] for index, gene in enumerate(genes)])
+
+        data = (data - mean) / std
+        data = np.expand_dims(data,axis=0)
+        print(data.shape)
         # loading the model
-        clf = load('static/trained_svm.joblib')
+        clf = load('DocOc/static/trained_svm.joblib')
 
         # predicting output
+        result = clf.predict(data)
 
-
-    return render(request, 'DocOc/verdict.html')
+    return render(request, 'DocOc/verdict.html',{'result': result})
