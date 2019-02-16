@@ -41,7 +41,7 @@ def upload(request):
         filename = fs.save(myfile.name, myfile)
         uploaded_file_url = fs.url(filename)
         # create a form instance and populate it with data from the request:
-
+        
         # Data preprocessing
         
         # loading the model
