@@ -28,6 +28,10 @@ def entry(request):
     return render(request, 'DocOc/entry.html')
 
 @csrf_exempt
+def dashboard(request):
+    return render(request, 'DocOc/dashboard.html')
+
+@csrf_exempt
 def verdict(request):
     return render(request, 'DocOc/verdict.html')
 
