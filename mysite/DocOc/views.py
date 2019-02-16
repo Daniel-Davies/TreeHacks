@@ -66,7 +66,7 @@ def upload(request):
 
         data = (data - mean) / std
         data = np.expand_dims(data,axis=0)
-        print(data.shape)
+
         # loading the model
         clf = load('DocOc/static/trained_svm.joblib')
 
