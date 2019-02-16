@@ -6,12 +6,10 @@ from django.conf import settings
 from django.core.mail import send_mail
 import json
 from django.http import JsonResponse
-
 from django.http import HttpResponse
-
-
-import sklearn
-
+from joblib import load
+from sklearn import svm
+import pickle
 # Create your views here.
 @csrf_exempt
 def index(request):
@@ -43,5 +41,13 @@ def upload(request):
         filename = fs.save(myfile.name, myfile)
         uploaded_file_url = fs.url(filename)
         # create a form instance and populate it with data from the request:
+
+        # Data preprocessing
+        
+        # loading the model
+        clf = load('static/trained_svm.joblib')
+
+        # predicting output
+
 
     return render(request, 'DocOc/verdict.html')
