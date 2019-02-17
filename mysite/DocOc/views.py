@@ -23,7 +23,7 @@ def index(request):
 def sendMail(request):
     if request.method == 'POST':
         data = request.POST.get("emailEntry")
-        send_mail('Subject here','Here is the message.','callmedanemailacc@gmail.com',[data],fail_silently=False)
+        send_mail('Your antibiotic dosage','Sometimes when you take antibiotics your symptoms may go away, and you may be tempted to stop taking your medication...','callmedanemailacc@gmail.com',[data],fail_silently=False)
         return render(request, 'DocOc/dashboard.html')
     else:
         return render(request, "DocOc/breakdown.html")
