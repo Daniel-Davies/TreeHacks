@@ -3,11 +3,11 @@
 
 {% block pagecontent %}
 {% include "DocOC/header.html" %}
-<div class="container">
+<div class="jumbotron d-flex align-items-center justify-content-center" style="height:100vh;">
 <form method="post" enctype="multipart/form-data" action="/upload">
-    <div class="form-group-vertical">
+    <div class="form-group">
 
-    <label for="fileup">Upload Data File : </label>
+    <label for="fileup"> <h4>Upload Data File : </h4></label>
     <input  id="fileup" type="file" name="myfile">
 </div>
     <button class="btn btn-primary" type="submit">Upload</button>
