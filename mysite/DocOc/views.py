@@ -24,13 +24,17 @@ def sendMail(request):
     if request.method == 'POST':
         data = request.POST.get("emailEntry")
         send_mail('Subject here','Here is the message.','callmedanemailacc@gmail.com',[data],fail_silently=False)
-        return render(request, 'DocOc/index.html')
+        return render(request, 'DocOc/dashboard.html')
     else:
         return render(request, "DocOc/breakdown.html")
 
 @csrf_exempt
 def entry(request):
     return render(request, 'DocOc/entry.html')
+
+@csrf_exempt
+def breakdownViral(request):
+    return render(request, 'DocOc/breakdownViral.html')
 
 @csrf_exempt
 def dashboard(request):
@@ -99,7 +103,7 @@ def upload(request):
         
         data_X = np.concatenate((data_X, data), axis = 0)
         data_Y = np.concatenate((data_Y, np.array(["2"])))
-
+        np.random.seed(2)
         pca = decomposition.PCA(n_components = 50)
         results = pca.fit_transform(data_X)
         tsne = manifold.TSNE(verbose = 1)

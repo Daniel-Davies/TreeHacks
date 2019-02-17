@@ -13,5 +13,6 @@ urlpatterns = [
     path('forums', views.forums, name='forums'),
     path('about', views.about, name='about'),
     path('tracking', views.tracking, name='tracking'),
+    path('breakdownViral', views.breakdownViral, name='breakdownViral'),
 
 ]

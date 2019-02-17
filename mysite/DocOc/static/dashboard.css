@@ -3,7 +3,7 @@
     }
     
     .header-leading{
-        font-size: 500%;
+        font-size: 450%;
     }
     .header-sub{
         font-size: 130%;
@@ -39,14 +39,14 @@
        width:100vw;
        background:
             linear-gradient(
-              rgba(0, 0, 0, 0.9), 
-              rgba(0, 0, 0, 0.9)
+              rgba(0, 0, 0, 0.85), 
+              rgba(0, 0, 0, 0.85)
             ),
-            url("pct11.jpg");
+            url("medical.jpeg");
        background-repeat:no-repeat; 
        background-size: 100% 100%; 
-       filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='pct11.jpg',sizingMethod='scale');
-       -ms-filter:"progid:DXImageTransform.Microsoft.AlphaImageLoader(src='pct11.jpg',sizingMethod='scale')";
+       filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='medical.jpeg',sizingMethod='scale');
+       -ms-filter:"progid:DXImageTransform.Microsoft.AlphaImageLoader(src='medical.jpeg',sizingMethod='scale')";
     }
     
     
