@@ -6,20 +6,18 @@
 <div class="jumbotron d-flex align-items-center justify-content-center" style="height:100vh;">
 <form method="post" enctype="multipart/form-data" action="/upload">
     <div class="form-group">
-
     <label for="fileup"> <h4>Upload Data File : </h4></label>
     <input  id="fileup" type="file" name="myfile">
 </div>
-    <button class="btn btn-primary" type="submit">Upload</button>
+    <button class="btn btn-primary btn-lg" type="submit" style="background-color: gray; outline-color: gray">Upload</button>
 </form>
 </div>
 <div class="container">
 
-<p>
+<h1>
     Charts and stuff go here
 
-</p>
-
+</h1>
 </div>
 {% include "DocOC/footer.html" %}
 {% endblock %}
