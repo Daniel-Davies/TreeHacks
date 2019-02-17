@@ -14,6 +14,8 @@ train using accuracy as our metric and by performing 5 fold cross validation in 
 Our final parameters were C=1 and gamma=0.001. Our five fold cross validation had an accuracy of 90.8% and our test set had a 
 100% accuracy.
 
+For gene set enrichment analysis, we used GSEA to run enrichment tests against C7: immunological signatures (189 gene sets) of GSEA's MSigDB database to compare patient sample against healthy samples.
+
 
 2. Mapping bacterial genome to find antibiotic-resistance conferring genes
 
