@@ -111,11 +111,24 @@ def upload(request):
                     results_viral.append(results[index].tolist())
                 else:
                     results_demo.append(results[index].tolist())
+            # heat map stuff
+            indices_order_cols = np.loadtxt("DocOc/static/heatmap_sort_indices", delimiter = "\t", dtype = int)
+            train_sorted = np.loadtxt("DocOc/static/heatmap_train.csv", delimiter = "\t", dtype = float)
 
+            data = [data[0][index] for index in indices_order_cols]        
+            data = np.expand_dims(data, axis = 0)
+            _sorted = np.concatenate((train_sorted[:5],train_sorted[-5:]),axis=0)
+
+            heatmap_values = np.concatenate((_sorted, data), axis = 0).T
+
+            
+            for index,row in enumerate(heatmap_values):
+                for i2, col in enumerate(row):
+                    flatmap_vals.append([index,i2,col])
     except:
         result = "Oops! Something went wrong!"
 
-    return render(request, 'DocOc/verdict.html',{'result': result,'x_scatter_data': results_bacteria,'y_scatter_data':results_viral,'z_scatter_data':results_demo, 'geneData': geneData})
+    return render(request, 'DocOc/verdict.html',{'result': result,'x_scatter_data': results_bacteria,'y_scatter_data':results_viral,'z_scatter_data':results_demo, 'geneData': geneData,'heatmap_data':flatmap_vals})
 
 
 @csrf_exempt
