@@ -1,14 +1,49 @@
-{% extends 'DocOc/base.html' %}
+{% extends 'DocOc/base.html' %} {% block pagecontent %} {% include "DocOC/header.html" %}
 
-{% block pagecontent %}
-{% include "DocOC/header.html" %}
-{% if verdict == '1' %}
-    <b>Viral, no antibiotics required</b>
-  {% else %}
-    <b>Bacterial, yes antibiotics required!</b>
+<div class="container-fluid d-flex justify-content-around" style="margin-top: 10vh;">
+    <div class="row col-10 d-flex justify-content-between">
+        <div class="jumbotron d-flex justify-content-center col-5 py-0">
+            <div class="card col-12">
+                <div class="card-body">
+                    <h5 class="card-title">Result</h5>
+                    {% if verdict == '1' %}
+                    <h6 class="card-subtitle mb-2 text-muted">Viral</h6>
+                    <p class="card-text">The patient has a viral infection. No medication is required at this point in time.</p>
+                    {% else %}
+                    <h6 class="card-subtitle mb-2 text-muted">Bacterial</h6>
+                    <p class="card-text">The patient has a bacterial infection. Please advise the patient on the correct dosage and dose window.</p>
+                    {% endif %}
+                    <a href="#" class="card-link">View dose requirements</a>
+                    <a href="#" class="card-link">Medicine Description</a>
+                </div>
+            </div>
+        </div>
 
-  {% endif %}
-    <a href="/breakdown">Explanation</a>
-    {% include "DocOC/footer.html" %}
-{% endblock %}
+        <div class="jumbotron col-5 py-0">
+            <div class="card col-12">
+                <div class="card-body">
+                    <h5 class="card-title">Most likely causes</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Top 3 most likely diseases</h6>
+                    <ul>
+                        <li><p class="card-text">Influenza</p></li>
+                        <li><p class="card-text">Tetanus</p></li>
+                        <li><p class="card-text">Tuberculosis</p></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid d-flex justify-content-around" style="margin-top: 10vh;">
+    <div class="row col-10 d-flex justify-content-between">
+        <div class="col-5 jumbotron">
 
+        </div>
+        <div class="col-5 jumbotron">
+
+        </div>
+    </div>
+</div>
+
+<a href="/breakdown">Explanation</a>
+{% include "DocOC/footer.html" %} {% endblock %}
