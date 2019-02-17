@@ -12,6 +12,7 @@ from sklearn import svm, manifold, decomposition
 import pickle
 import numpy as np
 
+from .utils import file_to_gsea
 
 # Create your views here.
 @csrf_exempt
@@ -20,8 +21,12 @@ def index(request):
 
 @csrf_exempt
 def sendMail(request):
-    send_mail('Subject here','Here is the message.','callmedanemailacc@gmail.com',['daviesdg@uci.edu'],fail_silently=False)
-    return render(request, 'DocOc/breakdown.html', {'confirmed': 1})
+    if request.method == 'POST':
+        data = request.POST.get("emailEntry")
+        send_mail('Subject here','Here is the message.','callmedanemailacc@gmail.com',[data],fail_silently=False)
+        return render(request, 'DocOc/index.html')
+    else:
+        return render(request, "DocOc/breakdown.html")
 
 @csrf_exempt
 def entry(request):
@@ -37,7 +42,7 @@ def verdict(request):
 
 @csrf_exempt
 def breakdown(request):
-    return render(request, 'DocOc/breakdown.html', {'confirmed': 0})
+    return render(request, 'DocOc/breakdown.html')
 
 @csrf_exempt
 def upload(request):
@@ -47,10 +52,13 @@ def upload(request):
     results_viral = []
     results_demo = []    
     result = -1
+    geneData = []
     try:
         # if this is a POST request we need to process the form data
         if request.method == 'POST' and request.FILES['myfile']:
             myfile = request.FILES['myfile']
+
+            geneData = file_to_gsea(str(myfile))
             fs = FileSystemStorage()
             filename = fs.save(myfile.name, myfile)
             uploaded_file_url = fs.url(filename)
@@ -107,7 +115,7 @@ def upload(request):
     except:
         result = "Oops! Something went wrong!"
 
-    return render(request, 'DocOc/verdict.html',{'result': result,'x_scatter_data': results_bacteria,'y_scatter_data':results_viral,'z_scatter_data':results_demo})
+    return render(request, 'DocOc/verdict.html',{'result': result,'x_scatter_data': results_bacteria,'y_scatter_data':results_viral,'z_scatter_data':results_demo, 'geneData': geneData})
 
 
 @csrf_exempt

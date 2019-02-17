@@ -1,7 +1,7 @@
 {% extends 'DocOc/base.html' %} {% block pagecontent %} {% include "DocOC/header.html" %}
 
 <div class="container-fluid d-flex justify-content-around" style="margin-top: 10vh;">
-    <div class="row col-8 d-flex justify-content-between">
+    <div class="row col-10 d-flex justify-content-between">
         <div class="jumbotron d-flex justify-content-center col-6 py-0 px-3 bg-white">
             <div class="card col-12">
                 <div class="card-body text-center">
@@ -22,12 +22,26 @@
         <div class="jumbotron col-6 py-0 px-3 bg-white" style="border-left: 2px solid black; border-radius: 0%">
             <div class="card col-12">
                 <div class="card-body text-center">
-                    <h5 class="card-title">Most likely causes</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">Top 3 most likely diseases</h6>
+                    <h5 class="card-title">Enriched Gene sets</h5>
                     <ul class="text-left">
-                        <li><p class="card-text">Influenza- read more on the treatment <a href="#">here</a></p></li>
-                        <li><p class="card-text">Tetanus- read more on the treatment <a href="#">here</a></p></li>
-                        <li><p class="card-text">Tuberculosis- read more on the treatment <a href="#">here</a></p></li>
+                        <li><a class="card-text mb-0" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">{{geneData.1.0}}</a>
+                            <div class="collapse" id="collapseExample">
+                                    <p class="card-text small p-0 mt-1 mb-0">{{geneData.1.1}}</p>
+                                    <p class="card-text p-0 mt-1">E-value: {{geneData.1.2}}</p>
+                            </div>
+                        </li>
+                        <li><a class="card-text mb-0" data-toggle="collapse" href="#collapseExample1" role="button" aria-expanded="false" aria-controls="collapseExample1">{{geneData.2.0}}</a>
+                            <div class="collapse" id="collapseExample1">
+                                    <p class="card-text small p-0 mt-1 mb-0">{{geneData.2.1}}</p>
+                                    <p class="card-text p-0 mt-1">E-value: {{geneData.2.2}}</p>
+                            </div>
+                        </li>
+                        <li><a class="card-text mb-0" data-toggle="collapse" href="#collapseExample2" role="button" aria-expanded="false" aria-controls="collapseExample2">{{geneData.3.0}}</a>
+                            <div class="collapse" id="collapseExample2">
+                                    <p class="card-text small p-0 mt-1 mb-0">{{geneData.3.1}}</p>
+                                    <p class="card-text p-0 mt-1">E-value: {{geneData.3.2}}</p>
+                            </div>
+                        </li>
                     </ul>
                 </div>
             </div>

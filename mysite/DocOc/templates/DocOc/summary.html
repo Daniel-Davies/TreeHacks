@@ -1,0 +1,266 @@
+<div id="chtContainer" class="col-6"></div>
+
+<script>    
+
+    // Create the chart
+    Highcharts.chart('chtContainer', {
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: 'Breakdown of antibiotics given by doctor'
+        },
+        xAxis: {
+            type: 'category'
+        },
+        yAxis: {
+            title: {
+                text: 'Percentage of antibiotic handout share'
+            }
+
+        },
+        legend: {
+            enabled: false
+        },
+        plotOptions: {
+            series: {
+                borderWidth: 0,
+                dataLabels: {
+                    enabled: true,
+                    format: '{point.y:.1f}%'
+                }
+            }
+        },
+
+        tooltip: {
+            headerFormat: '<span style="font-size:11px">{series.name}</span><br>',
+            pointFormat: '<span style="color:{point.color}">{point.name}</span>: <b>{point.y:.2f}%</b> of total<br/>'
+        },
+
+        "series": [
+            {
+                "name": "Age Groups",
+                "colorByPoint": true,
+                "data": [
+                    {
+                        "name": "Dr. Smith",
+                        "y": 62.74,
+                        "drilldown": "Chrome"
+                    },
+                    {
+                        "name": "Dr. Johnson",
+                        "y": 10.57,
+                        "drilldown": "Firefox"
+                    },
+                    {
+                        "name": "Dr. Khan",
+                        "y": 7.23,
+                        "drilldown": "Internet Explorer"
+                    },
+                    {
+                        "name": "Dr. Davies",
+                        "y": 5.58,
+                        "drilldown": "Safari"
+                    },
+                    {
+                        "name": "Dr. Shen",
+                        "y": 4.02,
+                        "drilldown": "Edge"
+                    },
+                    {
+                        "name": "Dr. Gurev ",
+                        "y": 1.92,
+                        "drilldown": "Opera"
+                    },
+                    {
+                        "name": "Dr. Saxena",
+                        "y": 7.62,
+                        "drilldown": "Opera2"
+                    }
+                ]
+            }
+        ],
+        "drilldown": {
+            "series": [
+                {
+                    "name": "Chrome",
+                    "id": "Chrome",
+                    "data": [
+                        [
+                            "Monday",
+                            0.1
+                        ],
+                        [
+                            "Tuesday",
+                            1.3
+                        ],
+                        [
+                            "Wednesday",
+                            53.02
+                        ],
+                        [
+                            "Thursday",
+                            1.4
+                        ],
+                        [
+                            "Friday",
+                            0.88
+                        ],
+                        [
+                            "Saturday",
+                            0.56
+                        ],
+                        [
+                            "Sunday",
+                            0.45
+                        ]
+                    ]
+                },
+                {
+                    "name": "Firefox",
+                    "id": "Firefox",
+                    "data": [
+                        [
+                            "Monday",
+                            1.02
+                        ],
+                        [
+                            "Tuesday",
+                            7.36
+                        ],
+                        [
+                            "Wednesday",
+                            0.35
+                        ],
+                        [
+                            "Thursday",
+                            0.11
+                        ],
+                        [
+                            "Friday",
+                            0.1
+                        ],
+                        [
+                            "Saturday",
+                            0.95
+                        ],
+                        [
+                            "Sunday",
+                            0.15
+                        ]
+                    ]
+                },
+                {
+                    "name": "Internet Explorer",
+                    "id": "Internet Explorer",
+                    "data": [
+                        [
+                            "v11.0",
+                            6.2
+                        ],
+                        [
+                            "v10.0",
+                            0.29
+                        ],
+                        [
+                            "v9.0",
+                            0.27
+                        ],
+                        [
+                            "v8.0",
+                            0.47
+                        ]
+                    ]
+                },
+                {
+                    "name": "Safari",
+                    "id": "Safari",
+                    "data": [
+                        [
+                            "v11.0",
+                            3.39
+                        ],
+                        [
+                            "v10.1",
+                            0.96
+                        ],
+                        [
+                            "v10.0",
+                            0.36
+                        ],
+                        [
+                            "v9.1",
+                            0.54
+                        ],
+                        [
+                            "v9.0",
+                            0.13
+                        ],
+                        [
+                            "v5.1",
+                            0.2
+                        ]
+                    ]
+                },
+                {
+                    "name": "Edge",
+                    "id": "Edge",
+                    "data": [
+                        [
+                            "v16",
+                            2.6
+                        ],
+                        [
+                            "v15",
+                            0.92
+                        ],
+                        [
+                            "v14",
+                            0.4
+                        ],
+                        [
+                            "v13",
+                            0.1
+                        ]
+                    ]
+                },
+                {
+                    "name": "Opera",
+                    "id": "Opera",
+                    "data": [
+                        [
+                            "v50.0",
+                            0.96
+                        ],
+                        [
+                            "v49.0",
+                            0.82
+                        ],
+                        [
+                            "v12.1",
+                            0.14
+                        ]
+                    ]
+                },
+                {
+                    "name": "Opera2",
+                    "id": "Opera2",
+                    "data": [
+                        [
+                            "v50.0",
+                            0.96
+                        ],
+                        [
+                            "v49.0",
+                            0.82
+                        ],
+                        [
+                            "v12.1",
+                            0.14
+                        ]
+                    ]
+                }
+            ]
+        }
+    });
+</script>

@@ -12,6 +12,6 @@ urlpatterns = [
     path('dashboard', views.dashboard, name='dashboard'),
     path('forums', views.forums, name='forums'),
     path('about', views.about, name='about'),
-    path('tracking', views.about, name='tracking'),
+    path('tracking', views.tracking, name='tracking'),
 
 ]
