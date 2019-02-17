@@ -1,0 +1,22 @@
+Aminocoumarins
+Aminoglycosides
+Bacitracin
+Cationic antimicrobial peptides
+Elfamycins
+Fluoroquinolones
+Fosfomycin
+Fusidic acid
+Glycopeptides
+Lipopeptides
+MLS
+Metronidazole
+Multi-drug resistance
+Mycobacterium tuberculosis-specific Drug
+Phenicol
+Rifampin
+Sulfonamides
+Tetracyclines
+Thiostrepton
+Trimethoprim
+Tunicamycin
+betalactams

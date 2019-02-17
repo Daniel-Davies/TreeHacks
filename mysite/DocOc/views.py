@@ -37,6 +37,39 @@ def breakdownViral(request):
     return render(request, 'DocOc/breakdownViral.html')
 
 @csrf_exempt
+def uploadResistance(request):
+    if request.method == 'POST' and request.FILES['myfile']:
+        myfile = request.FILES['myfile']
+        fs = FileSystemStorage()
+        filename = fs.save(myfile.name, myfile)
+        uploaded_file_url = fs.url(filename)
+
+        antibiotics = np.loadtxt("DocOc/static/unique_antibiotics.txt", delimiter ="\t", dtype = str)
+        database = np.loadtxt("DocOc/static/antibiotic_database.fasta", dtype = str)
+        fasta = np.loadtxt(uploaded_file_url, dtype = str) #this will be the uploaded fasta file
+
+        labels = database[0::2]
+        seqs = database[1::2]
+        data_dict = {}
+        for index, label in enumerate(labels):
+            seq = seqs[index]
+            for a in antibiotics:
+                if a.lower() in label.lower():
+                    data_dict[seq] = a
+                    break
+
+        resistant = []
+        fasta = fasta[1::2]
+        for seq  in fasta:
+            if seq in data_dict:
+                resistant.append(data_dict[seq])
+
+        resistant = np.unique(np.array(resistant))
+        resistant = [r[0].upper() + r[1:].lower() for r in resistant]
+
+        return render(request, 'DocOc/uploadResistance.html', {'resistances':resistant})
+
+@csrf_exempt
 def dashboard(request):
     return render(request, 'DocOc/dashboard.html')
 

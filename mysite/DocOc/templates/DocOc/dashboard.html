@@ -1,35 +1,39 @@
-
-{% extends 'DocOc/base.html' %}
-
-{% block pagecontent %}
+ {% extends 'DocOc/base.html' %} {% block pagecontent %}
 
 <link rel="stylesheet" href="static/dashboard.css">
 <div class="container">
     <div class="justify-content-center text-white" style="padding-top: 15vh;">
-      <!-- <p class="text-center col-6">You've reached the page of...</p> -->
-      <p class="text-center header-leading pb-0 m-0"><strong>Welcome, Dr. Watson</strong></p>
-      <p class="text-center header-sub">To the antibiotic diagnostic support tool</p>
-      <!-- <div class=" d-flex justify-content-center" style="width: 100%;"><img src="UClogo.png" height="10%" width="10%"/></div> -->
+        <!-- <p class="text-center col-6">You've reached the page of...</p> -->
+        <p class="text-center header-leading pb-0 m-0">
+            <strong>Welcome, Dr. Watson</strong>
+        </p>
+        <p class="text-center header-sub">FLUent: the antibiotic diagnostic support tool</p>
+        <!-- <div class=" d-flex justify-content-center" style="width: 100%;"><img src="UClogo.png" height="10%" width="10%"/></div> -->
     </div>
 </div>
 <div class="container">
-      <div class="d-flex justify-content-between m-1" style="padding-top: 18vh;">
-              <a class="btn btn-dark col-2 landingBtn m-3 py-3" href="/entry" role="button" style="font-size: 100%;">Analyze</a>                
-              <a class="btn btn-dark col-2 landingBtn m-3 py-3" href="/tracking" role="button" style="font-size: 100%;">Prescription Tracking</a>     
-              <a class="btn btn-dark col-2 landingBtn m-3 py-3" href="/breakdown" role="button" style="font-size: 100%;">Patient Awareness</a>                                                       
-              <a class="btn btn-dark col-2 landingBtn m-3 py-3" href="/forums" role="button" style="font-size: 100%;">Forums</a>
-              <a class="btn btn-dark col-2 landingBtn m-3 py-3" href="/about" role="button" style="font-size: 100%;">About</a>                                
-        </div>
+    <div class="d-flex justify-content-between m-1" style="padding-top: 18vh;">
+        <a class="btn btn-dark col-2 landingBtn m-3 py-3" href="/entry" role="button" style="font-size: 100%;">Analyze</a>
+        <a class="btn btn-dark col-2 landingBtn m-3 py-3" href="/tracking" role="button" style="font-size: 100%;">Prescription Tracking</a>
+        <a class="btn btn-dark col-2 landingBtn m-3 py-3" href="/breakdown" role="button" style="font-size: 100%;">Patient Awareness</a>
+        <a class="btn btn-dark col-2 landingBtn m-3 py-3" href="/forums" role="button" style="font-size: 100%;">Forums</a>
+    </div>
 </div>
 <div class="row m-0 p-0 mt-5 d-flex align-items-center align-content-center">
-  <div class="col-3 m-0 p-0 d-flex justify-content-end"><div class="loader"></div></div>
-  <p class="text-center text-white col-1 m-0 p-0">Further Data </p>
-  <div class="col-8 m-0 p-0"><div class="loader"></div></div>
+    <div class="col-3 m-0 p-0 d-flex justify-content-end">
+        <div class="loader"></div>
+    </div>
+    <p class="text-center text-white col-1 m-0 p-0">Further Data </p>
+    <div class="col-8 m-0 p-0">
+        <div class="loader"></div>
+    </div>
 </div>
 <div class="container">
-      <div class="justify-content-center text-white" style="padding-top: 8vh;">
-        <div class="d-flex justify-content-center"><a class="btn btn-dark btn-xlarge blogBtn" href="#" role="button">Improvements</a></div>
-      </div>
-  </div>
+    <div class="justify-content-center text-white" style="padding-top: 8vh;">
+        <div class="d-flex justify-content-center">
+            <a class="btn btn-dark blogBtn py-3" href="#" role="button">Patient Reporter</a>
+        </div>
+    </div>
+</div>
 
-  {% endblock %}
+{% endblock %}

@@ -1,7 +1,13 @@
  {% extends 'DocOc/base.html' %} {% block pagecontent %} {% include "DocOC/header.html" %}
 <div class="jumbotron d-flex align-items-end justify-content-center bg-white pb-0 mb-0" style="height:50vh;">
-    <div class="jumbotron">
-        <form method="post" enctype="multipart/form-data" action="/upload">
+    <div class="jumbotron pt-1 mt-2">
+        <div class="col-12 justify-content-center d-flex mt-2">
+            <div class="btn-group btn-group-toggle my-2 mb-4" data-toggle="buttons">
+                    <button type="radio" name="options" id="option1" autocomplete="off" onclick="option1(this)" class="btn btn-primary"> Bacterial or Viral</button>
+                    <button type="radio" name="options" id="option2" autocomplete="off" onclick="option2(this)" class="btn btn-dark"> Antibiotic Resistance</button>
+            </div>
+        </div>
+        <form method="post" enctype="multipart/form-data" action="/upload" id="myForm">
             <div class="form-group">
                 <label for="fileup">
                     <h4>Upload Data File : </h4>
@@ -15,7 +21,27 @@
     </div>
 </div>
 <div class="container-fluid d-flex justify-content-center col-3 text-center">
-    <p>*Please upload your details in the form of a CSV file corresponding to Microarray Expression data</p>
+    <p id="desc">To determine whether your patient's infection is caused by virus or bacteria, please upload a CSV file with Microarray Expression data</p>
 </div>
+<script>
+    function option1(item) {
+        item.className = "btn btn-primary"
+        document.getElementById("option2").className="btn btn-dark"
+        var frm = document.getElementById('myForm') || null;
+        if (frm) {
+            frm.action = '/upload'
+        }
+        document.getElementById("desc").innerHTML="To determine whether your patient's infection is caused by a virus or bacteria, please upload a CSV file with Microarray Expression data"
+    }
 
-{% include "DocOC/footer.html" %} {% endblock %}
+    function option2(item) {
+        item.className = "btn btn-primary"
+        document.getElementById("option1").className="btn btn-dark"
+        var frm = document.getElementById('myForm') || null;
+        if (frm) {
+            frm.action = '/uploadResistance'
+        }
+        document.getElementById("desc").innerHTML="To get a list of antibiotics that the patient's bacteria are likely resistant to, upload a FASTA file of the bacterial genome"
+
+    }
+</script> {% include "DocOC/footer.html" %} {% endblock %}

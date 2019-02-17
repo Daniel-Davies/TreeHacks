@@ -4,18 +4,32 @@
 {% block pagecontent %}
 
 <link href="static/index.css" rel="stylesheet">
+<style>
+  body{
+          background:
+            linear-gradient(
+              rgba(0, 0, 0, 0.85), 
+              rgba(0, 0, 0, 0.85)
+            ),
+            url("static/hosp.jpg");
+       background-repeat:no-repeat; 
+       background-size: 100% 100%; 
+       filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='static/hosp.jpg',sizingMethod='scale');
+       -ms-filter:"progid:DXImageTransform.Microsoft.AlphaImageLoader(src='static/hosp.jpg',sizingMethod='scale')";
+        }
+</style>
 <div class="wrapper fadeInDown">
     <div id="formContent">
       <!-- Tabs Titles -->
   
       <!-- Icon -->
       <div class="fadeIn first font-italic p-2">
-        Antibiotic awareness system
+        FLUent
       </div>
   
       <!-- Login Form -->
       <form action="/dashboard" method="post">
-        <input type="text" id="login_email" class="fadeIn second" name="login_email" placeholder="dococ@doc.org">
+        <input type="text" id="login_email" class="fadeIn second" name="login_email" placeholder="watson@doc.org">
         <input type="password" id="pass" class="fadeIn third" name="login_pass" value="dococisawesome">
         <input type="submit" class="fadeIn fourth" value="Log In">
       </form>
