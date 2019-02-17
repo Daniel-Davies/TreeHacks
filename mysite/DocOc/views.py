@@ -53,6 +53,7 @@ def upload(request):
     results_demo = []    
     result = -1
     geneData = []
+    flatmap_vals = []
     try:
         # if this is a POST request we need to process the form data
         if request.method == 'POST' and request.FILES['myfile']:
