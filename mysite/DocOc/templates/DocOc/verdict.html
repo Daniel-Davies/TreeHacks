@@ -1,10 +1,10 @@
 {% extends 'DocOc/base.html' %} {% block pagecontent %} {% include "DocOC/header.html" %}
 
 <div class="container-fluid d-flex justify-content-around" style="margin-top: 10vh;">
-    <div class="row col-10 d-flex justify-content-between">
-        <div class="jumbotron d-flex justify-content-center col-5 py-0">
+    <div class="row col-8 d-flex justify-content-between">
+        <div class="jumbotron d-flex justify-content-center col-6 py-0 px-3 bg-white">
             <div class="card col-12">
-                <div class="card-body">
+                <div class="card-body text-center">
                     <h5 class="card-title">Result</h5>
                     {% if verdict == '1' %}
                     <h6 class="card-subtitle mb-2 text-muted">Viral</h6>
@@ -13,41 +13,39 @@
                     <h6 class="card-subtitle mb-2 text-muted">Bacterial</h6>
                     <p class="card-text">The patient has a bacterial infection. Please advise the patient on the correct dosage and dose window.</p>
                     {% endif %}
-                    <a href="#" class="card-link">View dose requirements</a>
+                    <a href="https://www.fda.gov/Drugs/ResourcesForYou/SpecialFeatures/ucm485545.htm" class="card-link">View dose requirements</a>
                     <a href="#" class="card-link">Medicine Description</a>
                 </div>
             </div>
         </div>
 
-        <div class="jumbotron col-5 py-0">
+        <div class="jumbotron col-6 py-0 px-3 bg-white" style="border-left: 2px solid black; border-radius: 0%">
             <div class="card col-12">
-                <div class="card-body">
+                <div class="card-body text-center">
                     <h5 class="card-title">Most likely causes</h5>
                     <h6 class="card-subtitle mb-2 text-muted">Top 3 most likely diseases</h6>
-                    <ul>
-                        <li><p class="card-text">Influenza</p></li>
-                        <li><p class="card-text">Tetanus</p></li>
-                        <li><p class="card-text">Tuberculosis</p></li>
+                    <ul class="text-left">
+                        <li><p class="card-text">Influenza- read more on the treatment <a href="#">here</a></p></li>
+                        <li><p class="card-text">Tetanus- read more on the treatment <a href="#">here</a></p></li>
+                        <li><p class="card-text">Tuberculosis- read more on the treatment <a href="#">here</a></p></li>
                     </ul>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<div class="container-fluid d-flex justify-content-around" style="margin-top: 10vh;">
+<div class="container-fluid d-flex justify-content-center">
+    <p class="display-3">Visual Interpretation and Analysis</p>
+</div>
+<div class="container-fluid d-flex justify-content-around" style="margin-top: 5vh;">
     <div class="row col-10 d-flex justify-content-between">
- 
         <div class="col-5 jumbotron">
-        {% include "DocOC/scatterplot.html" %}
+            {% include "DocOC/scatterplot.html" %}
         </div>
-        
-        
         <div class="col-5 jumbotron">
-
         </div>
     </div>
 </div>
 
 <a href="/breakdown">Explanation</a>
-{% include "DocOC/footer.html" %} 
-{% endblock %}
+{% include "DocOC/footer.html" %} {% endblock %}
