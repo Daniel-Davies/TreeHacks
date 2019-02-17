@@ -2,13 +2,14 @@
 
 {% block pagecontent %}
 {% include "DocOC/header.html" %}
-{% if verdict == '1' %}
+
+{% if result == '1' %}
     <b>Viral, no antibiotics required</b>
   {% else %}
     <b>Bacterial, yes antibiotics required!</b>
-
   {% endif %}
-    <a href="/breakdown">Explanation</a>
-    {% include "DocOC/footer.html" %}
+  
+  <a href="/breakdown">Explanation</a>
+  {% include "DocOC/footer.html" %}
 {% endblock %}
 
