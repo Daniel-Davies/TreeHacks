@@ -5,14 +5,14 @@
         <div class="jumbotron d-flex justify-content-center col-6 py-0 px-3 bg-white">
             <div class="card col-12">
                 <div class="card-body text-center">
-                    <h5 class="card-title">Result</h5>
+                    <h5 class="card-title">Predicted Result</h5>
                     {% if result == '1' %}
-                    <h6 class="card-subtitle mb-2 text-muted">Viral</h6>
+                    <h6 class="card-subtitle mb-2 text-muted" style="font-size: 30px">VIRAL</h6>
                     <p class="card-text">The patient has a viral infection. No medication is required at this point in time.</p>
-                    <a href="https://www.fda.gov/Drugs/ResourcesForYou/SpecialFeatures/ucm485545.htm" class="card-link">View dose requirements</a>
+                    <a href="https://www.fda.gov/Drugs/ResourcesForYou/SpecialFeatures/ucm485545.htm" class="card-link"><font color="red">View dose requirements</font></a>
                     <a href="/breakdownViral" class="card-link">Medicine Description</a>
                     {% else %}
-                    <h6 class="card-subtitle mb-2 text-muted">Bacterial</h6>
+                    <h6 class="card-subtitle mb-2 text-muted"style="font-size: 30px;"><font color="red">BACTERIAL</font></h6>
                     <p class="card-text">The patient has a bacterial infection. Please advise the patient on the correct dosage and dose window.</p>
                     <a href="https://www.fda.gov/Drugs/ResourcesForYou/SpecialFeatures/ucm485545.htm" class="card-link">View dose requirements</a>
                     <a href="/breakdown" class="card-link">Medicine Description</a>
