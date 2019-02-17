@@ -1,3 +1,5 @@
+REFERENCES/DATABASE USED:
+
 1. Differentiation Between Viral vs. Bacterial Infections:
 
 For machine-learning (SVM) to differentiate between viral and bacterial infections, we used MicroArray dataset GLP96 from:
