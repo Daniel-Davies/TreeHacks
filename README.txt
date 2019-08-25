@@ -1,24 +1,49 @@
-REFERENCES/DATABASE USED:
+# FLUent
+An app designed to assist doctors in making decisions on handing out antibiotic prescriptions
 
-1. Differentiation Between Viral vs. Bacterial Infections:
+## The Team
+<html>
+    <img src="https://github.com/Daniel-Davies/TreeHacks/blob/master/68565359_756639748124610_1220692214477225984_n.jpg" alt="Team Photo" width="550">
+</html>  
 
-For machine-learning (SVM) to differentiate between viral and bacterial infections, we used MicroArray dataset GLP96 from:
-Ramilo O, Allman W, Chung W, Mejias A et al. Gene expression patterns in blood leukocytes discriminate patients with 
-acute infections. Blood 2007 Mar 1;109(5):2066-77. PMID: 17105821 
+|[Daniel Davies](https://github.com/Daniel-Davies)|[Sophia Shen](https://github.com/sophiaszy)| [Saketh Saxena](https://github.com/sakethsaxena) | [Sarah Gurev](https://www.linkedin.com/in/sarahgurev/)
+|--|--|--|--| 
 
-We used GEO2R to compare the bacterial infected datasets and viral infected datasets to get the top 100 differentially 
-expressed genes. We then used the expression of these top differentially expressed genes for SVM.
+## Awards 🏆
+"Most Creative Project" presented by TreeHacks (Stanford University)
 
-We used sklearn to train our SVM. We do a logarithmic grid search from 10^-3 to 10^3 for tuning parameters C and gamma. We 
-train using accuracy as our metric and by performing 5 fold cross validation in order to choose the best parameters. 
-Our final parameters were C=1 and gamma=0.001. Our five fold cross validation had an accuracy of 90.8% and our test set had a 
-100% accuracy.
+## The Project
 
-For gene set enrichment analysis, we used GSEA to run enrichment tests against C7: immunological signatures (189 gene sets) 
-of GSEA's MSigDB database to compare patient sample against healthy samples.
+PhilianthroPoints allows volunteers to find out about charity events in the local area, and upon participating an event, earn points through the app which they can then redeem for giftcards to partnering companies. The experience of volunteering time to a local charity is gamified by keeping a leaderboard (partitioned by location) of who has donated the most of their time to charities for a given time frame.  
 
+Charities post their events on our platform.  
+<img src='https://raw.githubusercontent.com/Daniel-Davies/SLOHacks2019/master/gifs/gif1.gif' title='PhilanthroPoints App Walkthrough' width='' alt='PhilanthroPoints App Walkthrough' />
+Users can look at volunteer events in their area, sign up for events, see what events they are participating in, redeem points, and check their local leaderboard.  
+<img src='https://raw.githubusercontent.com/Daniel-Davies/SLOHacks2019/master/gifs/iOS.gif' title='PhilanthroPoints App Walkthrough' width='' alt='PhilanthroPoints App Walkthrough' />
 
-2. Mapping bacterial genome to find antibiotic-resistance conferring genes
+After an event, charities can review statistics on how it went.  
+<img src='https://raw.githubusercontent.com/Daniel-Davies/SLOHacks2019/master/gifs/gif2.gif' title='PhilanthroPoints App Walkthrough' width='' alt='PhilanthroPoints App Walkthrough' />
 
-For our analysis, we used the Antibiotic Resistance Genes Database from:
-Liu B, Pop M. ARDB-Antibiotic Resistance Genes Database. Nucleic Acids Res. 2009 Jan;37(Database issue):D443-7 
+## The Inspiration
+Small, local charities form a key part of philanthrophic projects across the globe. Without them, millions of people around the world would be suffering with no one to help them. Volunteering your time at a local charity can be a fulfilling experience that can create a great positive impact in your local community.
+
+In practice however, local charities can find it very difficult to sustain themselves due to the lack of people that many such charities have come through. Since getting volunteers can be hard for these charities, we thought we'd help them out by creating further incentive for people in the community to help with our app, PhilianthroPoints.
+
+This means volunteers now have the feel good factor of helping a good cause, but also upon finding a charity they can connect to on our app, can also challenge themselves against their peers and earn small treats for doing so.
+
+## Implementation
+
+The idea of the project is to have two main platforms for our two main user types: charities that host/ run events, and the volunteers who sign up to these events and redeem the rewards for doing so. 
+
+The website is designed for the charities, so that an organisation can access our resources from, let's say, a work computer, meanwhile the app is designed to be much less formal and can be accessed by anyone on their iOS mobile device.
+
+#### Web Server
+
+The web server has two main goals:
+
+* Enable charities to host events and track their previous events by serving HTML pages
+* Act as a centralising data storage and resource unit for the iOS app, which is accessed through supporting API calls
+
+The server itself is written in python flask. More details can be found [here](http://flask.pocoo.org/). API calls for the app are provided as endpoints, as are webpage requests.
+
+The email SMTP client uses the Flask-Mail plugin, which sends messages through an SMTP server. The SMTP server we have used is a google mail account linked to Flask-Mail, and is triggered to send a given message from the "/sendMail" endpoint in our server.
