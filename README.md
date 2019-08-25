@@ -26,5 +26,6 @@ Finally, the app also functions as an information tool, which we can use to send
 
 - Clone this repo
 - Install Django
-- Pip install requirements.txt
+- Enter the TreeHacks directory and type "pip install -r requirements.txt"
 - Go into the "mysite" directory and enter "python manage.py runserver" into your terminal
+- Visit localhost:8000 to view the site
