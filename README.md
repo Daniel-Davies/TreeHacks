@@ -22,6 +22,8 @@ As an extension, we could model which strains of bacteria would be resistant to 
 
 Finally, the app also functions as an information tool, which we can use to send emails to inform patients about antibiotic resistance and why/ why not they were given antibiotics.
 
+<img src='https://github.com/Daniel-Davies/TreeHacks/blob/master/ezgif-2-d7a1da19f16c.gif' title='PhilanthroPoints App Walkthrough' width='' alt='PhilanthroPoints App Walkthrough' />
+
 ## Running the code
 
 - Clone this repo
