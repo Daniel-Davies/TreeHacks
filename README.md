@@ -17,9 +17,9 @@ An app designed to assist doctors in making decisions on handing out antibiotic 
 PhilianthroPoints allows volunteers to find out about charity events in the local area, and upon participating an event, earn points through the app which they can then redeem for giftcards to partnering companies. The experience of volunteering time to a local charity is gamified by keeping a leaderboard (partitioned by location) of who has donated the most of their time to charities for a given time frame.  
 
 Charities post their events on our platform.  
-<img src='https://raw.githubusercontent.com/Daniel-Davies/SLOHacks2019/master/gifs/gif1.gif' title='PhilanthroPoints App Walkthrough' width='' alt='PhilanthroPoints App Walkthrough' />
+<img src='https://github.com/Daniel-Davies/TreeHacks/blob/master/ezgif-2-d7a1da19f16c.gif' title='PhilanthroPoints App Walkthrough' width='' alt='PhilanthroPoints App Walkthrough' />
+
 Users can look at volunteer events in their area, sign up for events, see what events they are participating in, redeem points, and check their local leaderboard.  
-<img src='https://raw.githubusercontent.com/Daniel-Davies/SLOHacks2019/master/gifs/iOS.gif' title='PhilanthroPoints App Walkthrough' width='' alt='PhilanthroPoints App Walkthrough' />
 
 After an event, charities can review statistics on how it went.  
 <img src='https://raw.githubusercontent.com/Daniel-Davies/SLOHacks2019/master/gifs/gif2.gif' title='PhilanthroPoints App Walkthrough' width='' alt='PhilanthroPoints App Walkthrough' />
