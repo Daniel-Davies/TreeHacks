@@ -2,7 +2,7 @@
 An app designed to assist doctors in making decisions on handing out antibiotic prescriptions
 
 ## The Team
-<html>
+<html> 
     <img src="https://github.com/Daniel-Davies/TreeHacks/blob/master/68565359_756639748124610_1220692214477225984_n.jpg" alt="Team Photo" width="550">
 </html>  
 
