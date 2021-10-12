@@ -22,7 +22,7 @@ joblib==0.13.2
 jsonify==0.5
 MarkupSafe==1.1.0
 numpy==1.16.1
-opencv-contrib-python==4.0.0.21
+opencv-contrib-python==4.2.0.32
 opencv-python==4.0.0.21
 protobuf==3.6.1
 pyasn1==0.4.5
